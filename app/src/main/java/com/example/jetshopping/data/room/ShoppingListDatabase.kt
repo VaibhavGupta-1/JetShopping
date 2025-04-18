@@ -21,15 +21,15 @@ abstract class ShoppingListDatabase : RoomDatabase()  {
 
     companion object{
         @Volatile
-        var INSTNCE: ShoppingListDatabase? = null
+        var INSTANCE: ShoppingListDatabase? = null
         fun getDatabase(context: Context): ShoppingListDatabase {
-            return INSTNCE ?: synchronized(this) {
+            return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context,
                     ShoppingListDatabase::class.java,
                     "shopping_db"
                 ).build()
-                INSTNCE= instance
+                INSTANCE= instance
                 return instance
             }
         }

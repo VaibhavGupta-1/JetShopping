@@ -13,7 +13,7 @@ import com.example.jetshopping.data.room.models.Store
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface ShoppingListDao {
+interface ItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item:Item)
 
