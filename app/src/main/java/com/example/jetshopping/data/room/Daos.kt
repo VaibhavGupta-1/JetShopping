@@ -42,7 +42,7 @@ interface StoreDao{
     suspend fun delete(item:Item)
 
     @Query("SELECT * FROM stores")
-    fun getAll(): Flow<List<Store>>
+    fun getAllStores(): Flow<List<Store>>
 
     @Query("SELECT * FROM stores WHERE store_Id= :storeId")
     fun getStore(storeId: Int): Flow<Store>

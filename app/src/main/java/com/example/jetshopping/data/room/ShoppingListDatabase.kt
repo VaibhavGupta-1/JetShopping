@@ -4,11 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
+import com.example.jetshopping.data.room.converters.DateConverter
 import com.example.jetshopping.data.room.models.Item
 import com.example.jetshopping.data.room.models.ShoppingList
 import com.example.jetshopping.data.room.models.Store
 
-
+@TypeConverters(value = [DateConverter::class])
 @Database(
     entities = [ShoppingList ::class, Item::class, Store::class],
     version = 1,
