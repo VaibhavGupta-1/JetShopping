@@ -53,6 +53,11 @@ class HomeViewModel(
         filterItems(10001)
     }
 
+    fun onItemCheckedChange(item: Item, isChecked: Boolean){
+        viewModelScope.launch {
+            repository.updateItem(item.copy(ischecked = isChecked))
+        }
+    }
 
 
 

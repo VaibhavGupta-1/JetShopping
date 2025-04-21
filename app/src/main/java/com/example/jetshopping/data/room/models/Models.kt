@@ -24,7 +24,8 @@ data class Item(
     val listId: Int,
     val storeIdfk: Int,
     val date: Date,
-    val isChecked: Boolean
+    val isChecked: Boolean,
+    val ischecked: Boolean
 )
 
 
